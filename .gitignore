@@ -2,3 +2,4 @@ dist/
 gitversity
 tls.crt 
 tls.key
+.DS_Store
