@@ -44,3 +44,17 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+
+# Homebrew tap configuration in the same repository
+brews:
+  - name: gitversity
+    tap:
+      owner: Babatunde50
+      name: gitversity-cli
+    folder: Formula
+    commit_author:
+      name: Babatunde50
+      email: babatundeololade50@gmail.com
+
+checksum:
+  name_template: 'checksums.txt'
