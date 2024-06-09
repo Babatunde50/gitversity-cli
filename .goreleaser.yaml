@@ -71,8 +71,9 @@ chocolateys:
     project_url: https://dev.gitversity.com
     icon_url: "https://dev.gitversity.com/_next/image?url=%2Fimages%2Flogo.png&w=384&q=75"
     copyright: Gitversity Inc, 2024 
-    # api_key: "{{ .Env.CHOCOLATEY_API_KEY }}"
-    api_key: e5c7ccea-b778-471d-a4e5-b0d2d4bbc328
+    api_key: "{{ .Env.CHOCOLATEY_API_KEY }}"
+    description: |
+      CLI app to submit assignment to Gitversity
 
 
 checksum:
