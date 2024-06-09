@@ -25,11 +25,7 @@ jobs:
         with:
           go-version: stable
       - name: Install Chocolatey
-        run: |
-          Set-ExecutionPolicy Bypass -Scope Process -Force; `
-          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
-          iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-        shell: powershell
+        uses: crazy-max/ghaction-chocolatey@v3
       - name: Set up environment variables
         run: echo "CHOCOLATEY_API_KEY=${{ secrets.CHOCOLATEY_API_KEY }}" >> $GITHUB_ENV
         shell: bash
