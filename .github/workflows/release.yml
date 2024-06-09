@@ -24,6 +24,14 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: stable
+      # Install Chocolatey
+      - name: Install Chocolatey
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+          sudo mkdir -p /etc/apt/keyrings
+          curl -fsSL https://packages.chocolatey.org/install.ps1 | sudo bash
+      # Set the CHOCOLATEY_API_KEY environment variable
       - name: Set up environment variables
         run: echo "CHOCOLATEY_API_KEY=${{ secrets.CHOCOLATEY_API_KEY }}" >> $GITHUB_ENV
       # More assembly might be required: Docker logins, GPG, etc.
