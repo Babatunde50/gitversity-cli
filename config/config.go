@@ -1,4 +1,3 @@
-// config/config.go
 package config
 
 import (
@@ -27,7 +26,6 @@ type Config struct {
 var C Config
 
 func LoadConfig() {
-
 	exePath, err := os.Executable()
 	if err != nil {
 		fmt.Println("Error:", err)
@@ -35,6 +33,32 @@ func LoadConfig() {
 	}
 
 	rootDir := filepath.Dir(exePath)
+	configPath := filepath.Join(rootDir, "config.yaml")
+
+	// Check if the config file exists
+	if _, err := os.Stat(configPath); os.IsNotExist(err) {
+		// If the file does not exist, create it with default values
+		defaultConfig := []byte(`
+	token:
+	FileName: "token"
+	AppName: "gitversity"
+	FolderName: ".config"
+
+	services:
+	user_grpc:
+		host: "grpc.dev.user.api.gitversity.com:443"
+	assignment_grpc:
+		host: "grpc.dev.assignment.api.gitversity.com:443"
+	git_grpc:
+		host: "grpc.dev.git.api.gitversity.com:443"
+`)
+
+		err = os.WriteFile(configPath, defaultConfig, 0644)
+		if err != nil {
+			fmt.Println("Error creating default config file:", err)
+			return
+		}
+	}
 
 	viper.AddConfigPath(rootDir)
 	viper.SetConfigName("config")
