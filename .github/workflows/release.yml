@@ -26,6 +26,8 @@ jobs:
           go-version: stable
       - name: Install Chocolatey
         uses: crazy-max/ghaction-chocolatey@v3
+        with: 
+          args: -h
       - name: Set up environment variables
         run: echo "CHOCOLATEY_API_KEY=${{ secrets.CHOCOLATEY_API_KEY }}" >> $GITHUB_ENV
         shell: bash
