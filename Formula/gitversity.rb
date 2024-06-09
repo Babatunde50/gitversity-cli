@@ -5,12 +5,12 @@
 class Gitversity < Formula
   desc ""
   homepage ""
-  version "0.1.8"
+  version "0.1.9"
 
   on_macos do
     on_intel do
-      url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.8/gitversity-cli_Darwin_x86_64.tar.gz"
-      sha256 "ad80daaaade1d11ef769493c7047dd2c79af0f48133d759bb880c6895d9a8919"
+      url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.9/gitversity-cli_Darwin_x86_64.tar.gz"
+      sha256 "151ae419a8dc1aac22fc2bf84739d9e449c6bf777c750443fd68ee4a017ffddc"
 
       def install
         bin.install "gitversity-cli"
@@ -18,8 +18,8 @@ class Gitversity < Formula
       end
     end
     on_arm do
-      url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.8/gitversity-cli_Darwin_arm64.tar.gz"
-      sha256 "e0a23bd20aae30a15db510b5618d718e65411cb4596945a36d28cad16a276786"
+      url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.9/gitversity-cli_Darwin_arm64.tar.gz"
+      sha256 "1aa18e1297f0fed327c9c621852b2d8b562292d651d37d7848870f5433116d1b"
 
       def install
         bin.install "gitversity-cli"
@@ -31,8 +31,8 @@ class Gitversity < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.8/gitversity-cli_Linux_x86_64.tar.gz"
-        sha256 "6987336a4d219925e75a712d5b03fa94650931dbdfe2b6cde13e1ac61f9b9653"
+        url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.9/gitversity-cli_Linux_x86_64.tar.gz"
+        sha256 "ce42fe6f9882f78415914951dd3b8ef7077743ee0632e68581da8e31ba3b1a03"
 
         def install
           bin.install "gitversity-cli"
@@ -42,8 +42,8 @@ class Gitversity < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.8/gitversity-cli_Linux_arm64.tar.gz"
-        sha256 "b4969ecb59c27b0c90a74bc7bedcb031ed75003aaaaa70ad01807b132598c255"
+        url "https://github.com/Babatunde50/gitversity-cli/releases/download/v0.1.9/gitversity-cli_Linux_arm64.tar.gz"
+        sha256 "6277a2c85010724c1c98a8e58e3bc6e7be3046ac9b9abf90aff0b99778ea1f21"
 
         def install
           bin.install "gitversity-cli"
