@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: stable
+      - name: Set up environment variables
+        run: echo "CHOCOLATEY_API_KEY=${{ secrets.CHOCOLATEY_API_KEY }}" >> $GITHUB_ENV
       # More assembly might be required: Docker logins, GPG, etc.
       # It all depends on your needs.
       - name: Run GoReleaser
@@ -36,3 +38,4 @@ jobs:
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+          CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}

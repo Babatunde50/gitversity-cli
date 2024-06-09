@@ -62,5 +62,18 @@ brews:
       bin.install "gitversity-cli"
       bin.install_symlink bin/"gitversity-cli" => "gitversity"
 
+chocolateys:
+  - name: gitversity 
+    package_source_url: https://github.com/Babatunde50/gitversity-cli
+    owners: Gitversity 
+    title: Gitversity 
+    authors: Gitversity 
+    project_url: https://dev.gitversity.com
+    use: msi 
+    icon_url: "https://dev.gitversity.com/_next/image?url=%2Fimages%2Flogo.png&w=384&q=75"
+    copyright: Gitversity Inc, 2024 
+    api_key: "{{ .Env.CHOCOLATEY_API_KEY }}"
+
+
 checksum:
   name_template: "checksums.txt"
