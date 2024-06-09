@@ -37,8 +37,8 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           distribution: goreleaser
-          version: ${{ env.GITHUB_REF_NAME }}
-          args: release --clean --skip-publish --skip-validate --skip-sign
+          version: latest
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
           CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
@@ -58,8 +58,8 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           distribution: goreleaser
-          version: ${{ env.GITHUB_REF_NAME }}
-          args: release --clean --skip-publish --skip-validate --skip-sign
+          version: latest
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
 
@@ -75,7 +75,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           distribution: goreleaser
-          version: ${{ env.GITHUB_REF_NAME }}
+          version: latest
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
