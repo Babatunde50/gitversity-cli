@@ -4,8 +4,6 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	"os"
-	"path/filepath"
 	"time"
 
 	"google.golang.org/grpc"
@@ -14,29 +12,10 @@ import (
 )
 
 func Setup(host string) (*grpc.ClientConn, error) {
-	// Get the directory of the executable
-	exePath, err := os.Executable()
-	if err != nil {
-		return nil, fmt.Errorf("failed to get executable path: %v", err)
-	}
-
-	// Determine the root directory of the project (assuming the executable is in the root)
-	rootDir := filepath.Dir(exePath)
-
-	// Construct the full paths to the TLS certificate and key
-	certFile := filepath.Join(rootDir, "tls.crt")
-	keyFile := filepath.Join(rootDir, "tls.key")
-
-	// Load the client certificates from disk
-	cert, err := tls.LoadX509KeyPair(certFile, keyFile)
-	if err != nil {
-		return nil, fmt.Errorf("failed to load key pair: %v", err)
-	}
-
 	// Create the TLS credentials
 	creds := credentials.NewTLS(&tls.Config{
-		Certificates:       []tls.Certificate{cert},
-		InsecureSkipVerify: true, // This will accept any server certificate; not recommended for production
+		Certificates:       []tls.Certificate{},
+		InsecureSkipVerify: true,
 	})
 
 	// Dial the gRPC server with the TLS credentials
