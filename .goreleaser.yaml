@@ -55,11 +55,10 @@ brews:
       branch: main
     commit_author:
       name: Babatunde50
-      email: babatundeololade50@gmail.com 
-    install:
-      - bin.install "gitversity-cli"
-      - bin.install_symlink bin/"gitversity-cli" => "gitversity"
-
+      email: babatundeololade50@gmail.com
+    install: |
+      bin.install "gitversity-cli"
+      bin.install_symlink bin/"gitversity-cli" => "gitversity"
 
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
