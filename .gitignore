@@ -1,3 +1,4 @@
 dist/
 gitversity
-tls*
+tls.crt 
+tls.key
