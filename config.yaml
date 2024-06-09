@@ -1,0 +1,12 @@
+token:
+  FileName: "token"
+  AppName: "gitversity"
+  FolderName: ".config"
+
+services:
+  user_grpc:
+    host: "grpc.dev.user.api.gitversity.com:443"
+  assignment_grpc:
+    host: "grpc.dev.assignment.api.gitversity.com:443"
+  git_grpc:
+    host: "grpc.dev.git.api.gitversity.com:443"
