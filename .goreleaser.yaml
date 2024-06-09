@@ -69,7 +69,6 @@ chocolateys:
     title: Gitversity 
     authors: Gitversity 
     project_url: https://dev.gitversity.com
-    use: msi 
     icon_url: "https://dev.gitversity.com/_next/image?url=%2Fimages%2Flogo.png&w=384&q=75"
     copyright: Gitversity Inc, 2024 
     api_key: "{{ .Env.CHOCOLATEY_API_KEY }}"
